@@ -8,7 +8,8 @@ class TestAssociationProxy:
     def test_has_association_proxy(self):
         '''has association proxy to items'''
         with app.app_context():
-            c = Customer()
+            c = Customer(name="Test Customer")
+
             i = Item()
             db.session.add_all([c, i])
             db.session.commit()
